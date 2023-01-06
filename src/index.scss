@@ -1,0 +1,109 @@
+@use "./global";
+
+$primary-blue-clr: #49a6e9;
+$primary-blue-clr-1: #a5d5f8;
+header {
+  width: 100vw;
+  background-color: white;
+  box-shadow: -7px 12px 16px #d9d9d9a1;
+
+  .container {
+    width: 95vw;
+    margin: auto;
+    .navbar {
+      padding: 1rem 0;
+      .navheader {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        cursor: pointer;
+        img {
+          width: 14rem;
+        }
+        .toggle {
+          font-size: 1.5rem;
+          color: $primary-blue-clr;
+          transition: 0.5s;
+          &:hover {
+            color: black;
+            transform: rotateZ(90deg);
+          }
+        }
+      }
+      .link-container {
+        height: 0;
+        overflow: hidden;
+        transition: 0.9s;
+        .links {
+          li {
+            cursor: pointer;
+            margin: 0.5rem 0;
+            padding: 0.5rem 0.5rem;
+            border-radius: 5px;
+            transition: 0.5s;
+            a {
+              color: rgba(0, 0, 0, 0.651);
+              text-transform: capitalize;
+              transition: all 0.5s;
+            }
+            &:hover {
+              padding: 0.5rem 1.5rem;
+              background-color: $primary-blue-clr-1;
+              a {
+                color: $primary-blue-clr;
+              }
+            }
+          }
+        }
+      }
+      .social {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  header {
+    .container {
+      width: 80vw;
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .navheader {
+          .toggle {
+            display: none;
+          }
+        }
+        .link-container {
+          height: auto !important;
+          .links {
+            display: flex;
+
+            li {
+              padding: 0rem 0.5rem;
+              margin: 0;
+              a {
+              }
+              &:hover {
+                padding: 0rem 0.5rem;
+                background-color: transparent;
+                a {
+                  color: $primary-blue-clr;
+                }
+              }
+            }
+          }
+        }
+      }
+      .social {
+        display: flex !important;
+        a {
+          margin: 0 0.5rem;
+          color: $primary-blue-clr;
+        }
+      }
+    }
+  }
+}
